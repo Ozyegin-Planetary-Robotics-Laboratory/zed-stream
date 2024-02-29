@@ -1,24 +1,27 @@
-# ZED-Gstreamer
+# zed-stream
 
-# INTRODUCTION
+## Introduction
 
-- This bash script code aims to encode the data it receives from the ZED camera and send it to a websocket, then decode the data they receive from there and display it again.
+- This repository contains two scripts that are purposed for streaming and showcasing a ZED camera stream using GStreamer and the ZED GStreamer plugin.
 
-- "h264" was used to encode and decode the data. ( https://gstreamer.freedesktop.org/documentation/x264/index.html )
+- AVC is utilized for encoding video stream. ( https://gstreamer.freedesktop.org/documentation/x264/index.html )
 
-# HOW YOU CAN USE THIS ?
+## Installation
 
-1- First of all, you should install gstreamer in your machine. (https://gstreamer.freedesktop.org/documentation/installing/index.html)
+First of all, [GStreamer](https://gstreamer.freedesktop.org/documentation/installing/index.html), [ZED SDK](https://www.stereolabs.com/docs/gstreamer/#installation) and [ZED GStreamer plugin](https://github.com/stereolabs/zed-gstreamer) must be installed. 
 
-2- You should install ZED SDK in your machine. ( https://www.stereolabs.com/docs/gstreamer/#installation ) 
+> [!Important]  
+> The ZED SDK has a large size so make sure you have enough space before downloading.
 
-( !!! This SDK has a large size so make sure you have enough space before downloading !!! )
+Then clone the repositories and you may readily use the scripts.
 
-3- Make sure you connect zed camera.
+## Usage
 
-4- Then, first run the transmitter.sh at terminal.
+The scripts are meant to be used on two different machines connected through a wireless network, do not use this script if your purpose is to simply view the camera feed. You will suffer a loss of quality that can hardly be justified.
 
-5- Finally, run the receiver.sh at second terminal.
+```
+sudo bash zed_transmit <target_port> <target_ip>
+sudo bash zed_receive <target_port>
+```
 
-You will see a screen which is shows zed camera.
-
+The parameters target_port must match in order for this to work properly.

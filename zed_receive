@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+    echo "Usage: $0 <target_port>"
+    exit 1
+fi
+target_port=$1
+gst-launch-1.0 udpsrc port=$target_port ! application/x-rtp, encoding-name=H264,payload=96 ! rtph264depay ! h264parse ! avdec_h264 ! videoconvert ! autovideosink

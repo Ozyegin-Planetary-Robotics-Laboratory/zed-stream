@@ -5,4 +5,4 @@ if [ -z "$1" ] || [ -z "$2" ]; then
 fi
 target_port=$1
 target_ip=$2
-gst-launch-1.0 -e zedsrc ! videoconvert ! x264enc tune=zerolatency bitrate=1000 speed-preset=superfast ! h264parse ! queue ! rtph264pay config-interval=10 pt=96 ! udpsink host=$target_ip port=$target_port
+gst-launch-1.0 -e v4l2src ! videoconvert ! videocrop right=2208 ! x264enc tune=zerolatency bitrate=1000 speed-preset=superfast ! h264parse ! queue ! rtph264pay config-interval=10 pt=96 ! udpsink host=$target_ip port=$target_port

@@ -8,7 +8,7 @@
 
 ## Installation
 
-First of all, [GStreamer](https://gstreamer.freedesktop.org/documentation/installing/index.html), [ZED SDK](https://www.stereolabs.com/docs/gstreamer/#installation) and [ZED GStreamer plugin](https://github.com/stereolabs/zed-gstreamer) must be installed. 
+First of all, [GStreamer](https://gstreamer.freedesktop.org/documentation/installing/index.html), [ZED SDK](https://www.stereolabs.com/docs/gstreamer/#installation). 
 
 > [!Important]  
 > The ZED SDK has a large size so make sure you have enough space before downloading.
